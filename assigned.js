@@ -10,6 +10,7 @@ const unsolvedAfterEliminated = () => {
   }
 };
 const unsolvedAfterSolved = () => {
+  // console.log("unsolvedAfterSolved called");
   solvedArray.forEach((aGItem, x) => {
     aGItem.forEach((item, y) => {
       if (item > 0) {
@@ -31,10 +32,15 @@ const unsolvedAfterSolved = () => {
       }
     });
   });
+  console.log(unsolved);
 };
 const assigned = () => {
   unsolvedAfterSolved();
   unsolvedAfterEliminated();
+  while (checkUnsolved()) {
+    unsolvedAfterSolved();
+  }
+
   let solved_id;
   for (let r = 0; r < 9; r++) {
     for (let c = 0; c < 9; c++) {

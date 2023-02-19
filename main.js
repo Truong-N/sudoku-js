@@ -50,5 +50,6 @@ const render = () => {
   displayAll();
   styleAll();
   highlight();
+  // checkUnsolved();
 };
 render();
